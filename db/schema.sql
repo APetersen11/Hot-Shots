@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS hotshots_db;
+
+CREATE DATABASE hotshots_db;
