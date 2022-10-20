@@ -26,7 +26,7 @@
     <!-- nav bar start -->
     <header>
       <div
-        class="header header-fixed u-unselectable header-animated bg-warning"
+        class="header header-fixed u-unselectable header-animated bg-warning u-absolute"
       >
         <div class="header-brand">
           <div class="nav-item no-hover">
@@ -53,17 +53,35 @@
       </div>
     </header>
 
-    <!-- login/ sign up form -->
-    <div class="grid u-gap-2 u-text-center">
-        <div class="grid-c-4" style="background: linear-gradient(to right, #8e2de2, #4a00e0); color: #fff; border-radius: .25rem;">
-            <p><b>Sign Up</b></p>
+    <!-- login form -->
+    <div
+      class="card u-center-alt u-absolute bg-red-700 text-warning"
+      style="width: 600px; height: 450px"
+    >
+      <div class="card__header u-center bg-red-700 text-warning">
+        <p class="font-bold px-3">Login</p>
+      </div>
+      <div class="content bg-red-700 text-warning">
+        <div class="form-group p-4">
+          <input
+            type="string"
+            class="form-group-input"
+            placeholder="Username"
+          />
         </div>
-        <div class="grid-c-4" style="background: linear-gradient(to right, #8e2de2, #4a00e0); color: #fff; border-radius: .25rem;">
-            <p><b>Login</b></p>
+        <div class="form-group p-4 bg-red-700 text-warning">
+          <input
+            type="string"
+            class="form-group-input"
+            placeholder="Password"
+          />
         </div>
+        <div class="u-center">
+            <a href="" class="text-warning text-bold">First time here? Become a Hot Shot!</a>
+        </div>
+      <div class="u-center bg-red-700 text-warning p-4">
+        <button class="btn-link outline bg-black text-warning">Submit</button>
+      </div>
     </div>
-
-
-
   </body>
 </html>
