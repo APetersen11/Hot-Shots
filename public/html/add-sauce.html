@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hot Shots</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon.ico"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css"
     />
   </head>
+
+  <!-- background image -->
   <style>
     body {
       background-image: url(../assets/images/fire\ bg.png);
@@ -24,7 +31,7 @@
     <!-- nav bar start -->
     <header>
       <div
-        class="header header-fixed u-unselectable header-animated bg-warning u-absolute"
+        class="header header-fixed u-unselectable header-animated bg-warning"
       >
         <div class="header-brand">
           <div class="nav-item no-hover">
@@ -50,33 +57,61 @@
         </div>
       </div>
     </header>
+<!-- add pepper image -->
 
-    <!-- login form -->
+
+    <!-- add sauce form start -->
     <div
-      class="card u-center-alt u-absolute bg-red-700 text-warning"
-      style="width: 600px; height: 450px"
+      class="card u-center-alt u-absolute bg-red-700 text-warning u-overflow-auto"
+      style="width: 800px; height: 450px"
     >
       <div class="card__header u-center bg-red-700 text-warning">
-        <p class="font-bold px-3">Login</p>
+        <p class="font-bold px-3">Add a new sauce!</p>
       </div>
       <div class="content bg-red-700 text-warning">
-        <div class="form-group p-4">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <p class="u-text-ellipsis">What is the name of the sauce?</p>
+          <input
+            type="sauce-name"
+            class="form-group-input"
+            placeholder="Sauce Name"
+          />
+        </div>
+      </div>
+      <div class="content bg-red-700 text-warning">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <p class="u-text-ellipsis">Please describe the sauce.</p>
+          <textarea
+            type="description"
+            class="form-group-input"
+            placeholder="Description"
+          ></textarea>
+        </div>
+      </div>
+      <div class="content bg-red-700 text-warning">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <p class="u-text-ellipsis">Where did you find it?</p>
           <input
             type="string"
             class="form-group-input"
             placeholder="Username"
           />
         </div>
-        <div class="form-group p-4 bg-red-700 text-warning">
-          <input
-            type="string"
-            class="form-group-input"
-            placeholder="Password"
-          />
+      </div>
+      <div class="content bg-red-700 text-warning">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <label class="u-text-ellipsis">
+            What is the approx heat level of the sauce?
+          </label>
+          <select class="select bg-white text-red-700" placeholder="Choose one">
+            <option>Mild</option>
+            <option>Medium</option>
+            <option>Hot</option>
+            <option>Extreme</option>
+            <option>Killer</option>
+          </select>
         </div>
-        <div class="u-center">
-            <a href="" class="text-black text-bold">First time here? Become a Hot Shot!</a>
-        </div>
+      </div>
       <div class="u-center bg-red-700 text-warning p-4">
         <button class="btn-link outline bg-black text-warning">Submit</button>
       </div>

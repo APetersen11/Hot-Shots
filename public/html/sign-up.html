@@ -11,6 +11,7 @@
       href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css"
     />
   </head>
+
   <style>
     body {
       background-image: url(../assets/images/fire\ bg.png);
@@ -51,32 +52,51 @@
       </div>
     </header>
 
-    <!-- login form -->
+    <!-- sign up form -->
     <div
-      class="card u-center-alt u-absolute bg-red-700 text-warning"
+      class="card u-center-alt u-absolute bg-red-700 text-warning u-overflow-auto"
       style="width: 600px; height: 450px"
     >
       <div class="card__header u-center bg-red-700 text-warning">
-        <p class="font-bold px-3">Login</p>
+        <p class="font-bold px-3">Sign Up</p>
+      </div>
+      <div class="u-center">
+        <a href="" class="text-black text-bold"> Already a Hot Shot? Click here to log in.</a>
+    </div>
+      <div class="content bg-red-700 text-warning">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <p class="u-text-ellipsis">Please enter your first name.</p>
+          <input type="name" class="form-group-input" placeholder="Name" />
+        </div>
       </div>
       <div class="content bg-red-700 text-warning">
-        <div class="form-group p-4">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <p class="u-text-ellipsis">Please enter your E-mail.</p>
+          <input type="email" class="form-group-input" placeholder="E-mail" />
+        </div>
+      </div>
+      <div class="content bg-red-700 text-warning">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <p class="u-text-ellipsis">Please enter your desired username.</p>
           <input
             type="string"
             class="form-group-input"
             placeholder="Username"
           />
         </div>
-        <div class="form-group p-4 bg-red-700 text-warning">
+      </div>
+      <div class="content bg-red-700 text-warning">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <p class="u-text-ellipsis">
+            Please enter your password (must be at least 4 characters long).
+          </p>
           <input
-            type="string"
+            type="password"
             class="form-group-input"
             placeholder="Password"
           />
         </div>
-        <div class="u-center">
-            <a href="" class="text-black text-bold">First time here? Become a Hot Shot!</a>
-        </div>
+      </div>
       <div class="u-center bg-red-700 text-warning p-4">
         <button class="btn-link outline bg-black text-warning">Submit</button>
       </div>
