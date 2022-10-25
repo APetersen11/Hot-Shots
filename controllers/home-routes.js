@@ -1,8 +1,23 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 
+router.get('/', (req, res) => {
+    res.render('homepage');
+});
 
+router.get('/login', (req, res) => {
+    res.render('login');
+});
 
+router.get('/signup', (req, res) => {
+    res.render('signup');
+});
 
+router.get('/addsauce', (req, res) => {
+    res.render('addsauce');
+});
 
-module.exports = router;
+router.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+});
+
+module.exports = router
