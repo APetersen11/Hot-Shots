@@ -1,6 +1,6 @@
 -- NEEDS PROPER FORMATTING!!
 
-Hot sauce (Name, description, location, sco_score)
+Hot sauce (name, description, location, sco_score)
     ('Elijahs Xtreme Regret Hot Sauce', 'Delicious combination of extreme heat and fruity sweetness. There’s more depth here than many super-hot sauces and very little dilution keeping you from the Carolina Reaper and scorpion pepper’s super-spiciness and natural sweetness.', 'Lowell, NC', 'Killer')
     ('Blairs Ultra Death Sauce', 'Blair’s Ultra Death Sauce walks the talk of its name. This is extreme heat, so use caution with it. This sauce has some sweet flavor behind the heat…but who are we kidding, it’s all about the spiciness and wicked packaging here.', 'Highlands, NJ', 'Killer')
     ('Burn After Eating Hot Sauce', 'It’s surprisingly tasty, but it’s not for the timid. The little amount that most users will use won’t showcase how delicious the sauce is.', 'Rochester, NY', 'Killer')
