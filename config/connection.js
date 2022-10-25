@@ -9,10 +9,6 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     dialect: 'mysql',
     port: 3306
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 22f861a2be9b5dca493aab6188e7473b8bcedab3
 
 
 
