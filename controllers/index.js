@@ -2,7 +2,6 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api');
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 
 router.use('/api', apiRoutes);
