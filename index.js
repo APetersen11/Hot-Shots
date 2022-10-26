@@ -52,7 +52,6 @@ const getAssetInfo = async (publicId) => {
     }
 };
 
-cloudinary.imageTag('test/killer_nmgdbi.png').toHtml('./views/login.handlebars');
 //////////////////////////////////////////////////////////////
 // Creates an HTML image tag with a transformation that
 // results in a circular thumbnail crop of the image  
