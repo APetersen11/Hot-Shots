@@ -1,34 +1,32 @@
 <!-- sign up form -->
-    <div
-      class="card u-center-alt u-absolute bg-red-700 text-warning u-overflow-auto"
-      style="width: 600px; height: 450px"
-    >
-      <div class="card__header u-center bg-red-700 text-warning">
-        <p class="font-bold px-3">Sign Up</p>
-      </div>
-      <div class="u-center">
-        <a href="/login" class="text-black text-bold"> Already a Hot Shot? Click here to log in.</a>
+<html>
+
+<body>
+  <div class="card u-center-alt u-absolute bg-red-700 text-warning u-overflow-auto" style="width: 600px; height: 450px">
+    <div class="card__header u-center bg-red-700 text-warning">
+      <p class="font-bold px-3">Sign Up</p>
     </div>
-      <div class="content bg-red-700 text-warning">
-        <div class="form-group p-2 bg-red-700 text-warning u-center">
-          <p class="u-text-ellipsis">Please enter your first name.</p>
-          <input type="name" class="form-group-input" placeholder="Name" />
-        </div>
+    <div class="u-center">
+      <a href="/login" class="text-black text-bold"> Already a Hot Shot? Click here to log in.</a>
+    </div>
+    {{!-- added class sign up form to reference in signup.js --}}
+    <form class="content bg-red-700 text-warning signup-form">
+      <div class="form-group p-2 bg-red-700 text-warning u-center">
+        <p class="u-text-ellipsis">Please enter your first name.</p>
+        <input type="name" class="form-group-input" placeholder="Name" id="name-signup" />
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
           <p class="u-text-ellipsis">Please enter your E-mail.</p>
-          <input type="email" class="form-group-input" placeholder="E-mail" />
+          {{!-- added id of 'email-signup' --}}
+          <input type="email" class="form-group-input" placeholder="E-mail" id="email-signup" />
         </div>
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
           <p class="u-text-ellipsis">Please enter your desired username.</p>
-          <input
-            type="string"
-            class="form-group-input"
-            placeholder="Username"
-          />
+          <input type="string" class="form-group-input" placeholder="Username" {{!-- added id of 'username-signup' --}}
+            id="username-signup" />
         </div>
       </div>
       <div class="content bg-red-700 text-warning">
@@ -36,16 +34,17 @@
           <p class="u-text-ellipsis">
             Please enter your password (must be at least 4 characters long).
           </p>
-          <input
-            type="password"
-            class="form-group-input"
-            placeholder="Password"
-          />
+          <input type="password" class="form-group-input" placeholder="Password" {{!-- added if of password-signup --}}
+            id="password-signup" />
+        </div>
+        <div class="u-center bg-red-700 text-warning p-4">
+          {{!-- added a type of submit for the button --}}
+          <button type="submit" class="btn-link outline bg-black text-warning">Submit</button>
         </div>
       </div>
-      <div class="u-center bg-red-700 text-warning p-4">
-        <button class="btn-link outline bg-black text-warning">Submit</button>
-      </div>
-    </div>
-  </body>
+    </form>
+  </div>
+  <script src="/javascript/signup.js"></script>
+</body>
+
 </html>

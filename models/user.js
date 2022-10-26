@@ -1,8 +1,14 @@
 //make user model using sequelize for the user
 const { Model,DataTypes } = require("sequelize")
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
-class User extends Model {}
+class User extends Model {
+      // set up method to run on instance data (per user) to check password
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 User.init(
     {
@@ -12,7 +18,11 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        first_name:{
+        name:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        username:{
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -34,17 +44,25 @@ User.init(
         }
     },
     {
-          sequelize,
-          // don't automatically create createdAt/updatedAt timestamp fields
-          timestamps: false,
-          // don't pluralize name of database table
-          freezeTableName: true,
-          // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
-          underscored: true,
-          // make it so our model name stays lowercase in the database
-          modelName: 'user'
-    }
-)
+        hooks: {
+          // set up beforeCreate lifecycle "hook" functionality
+          async beforeCreate(newUserData) {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
+          },
+    
+          async beforeUpdate(updatedUserData) {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            return updatedUserData;
+          }
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user'
+      }
+    );
 
 module.exports = User;
 
