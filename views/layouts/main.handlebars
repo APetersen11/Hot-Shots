@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hot Shots</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css"
-    />
-  </head>
 
-  <!-- background image -->
-  <style>
-    body {
-      background-image: url(../assets/images/fire\ bg.png);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-  </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hot Shots</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css" />
+</head>
 
-  <body class="bg-black">
-    <!-- nav bar start -->
-    <header>
-      <div
-        class="header header-fixed u-unselectable header-animated bg-warning"
-      >
-        <div class="header-brand">
-          <div class="nav-item no-hover">
-            <a>
-              <img src="../assets/images/logo-icon-name.png" />
-              <h6 class="title text-red-700">Hot Shots</h6>
-            </a>
-          </div>
-          <div class="nav-item">
-            <a href="#">
-              <span class="icon">
-                <i class="fab fa-wrapper fa-github"></i>
-              </span>
-            </a>
-          </div>
+<!-- background image -->
+<style>
+  body {
+    background-image: url(../assets/images/fire\ bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+
+<body class="bg-black">
+  <!-- nav bar start -->
+  <header>
+    <div class="header header-fixed u-unselectable header-animated bg-warning">
+      <div class="header-brand">
+        <div class="nav-item no-hover">
+          <a>
+            <img src="../assets/images/logo-icon-name.png" />
+            <h6 class="title text-red-700">Hot Shots</h6>
+          </a>
+          {{!-- log out button --}}
+          <a href="/login"><button class="text-red-700" id="logout"
+              style="padding: 0; border: none; background: none;">Log Out</button></a>
+          {{!-- end log out button --}}
         </div>
-        <div
-          class="header-nav"
-          style="background-color: #fab633"
-          id="header-menu"
-        >
-          <!-- Other nav categories, controls, nav-items, etc. This is hidden on touch enabled devices -->
+        <div class="nav-item">
+          <a href="#">
+            <span class="icon">
+              <i class="fab fa-wrapper fa-github"></i>
+            </span>
+          </a>
         </div>
       </div>
-    </header>
+      <div class="header-nav" style="background-color: #fab633" id="header-menu">
+        <!-- Other nav categories, controls, nav-items, etc. This is hidden on touch enabled devices -->
+      </div>
+    </div>
+  </header>
 
-    {{{body}}}
+  {{{body}}}
+  <script src="/javascript/logout.js"></script>
+</body>
 
-  </body>
-
-  </html>
+</html>
