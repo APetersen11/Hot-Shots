@@ -6,7 +6,7 @@ async function logOutButton(event) {
 
 // function preventBack() { window.history.forward(); }
 // setTimeout("preventBack()", 0);
-// window.onunload = function () { null };
+// window.onunload = function(){null};
 
 logout.addEventListener('click', () => {
     console.log('clicking')
