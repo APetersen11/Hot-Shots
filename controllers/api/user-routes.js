@@ -5,7 +5,6 @@ const { User, Post, Sauce  } = require('../../models');
 router.get('/', (req, res) => {
     //Access our User model and run .findall() mehtod
     User.findAll({
-        //we can exclude certain things from showing in this case the password. 
         attributes: { exclude: ['password'] }
     })
         .then(dbUserData => res.json(dbUserData))
@@ -43,7 +42,8 @@ router.post('/', (req, res) => {
         //these were defined in the User model
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        name: req.body.name
     })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
@@ -52,6 +52,28 @@ router.post('/', (req, res) => {
         })
 });
 
+//POST login! api/users/login
+router.post('/login', (req, res) => {
+    User.findOne({
+      where: {
+        email: req.body.email
+      }
+    }).then(dbUserData => {
+      if (!dbUserData) {
+        res.status(400).json({ message: 'No user with that email address!' });
+        return;
+      }
+  
+      const validPassword = dbUserData.checkPassword(req.body.password);
+  
+      if (!validPassword) {
+        res.status(400).json({ message: 'Incorrect password!' });
+        return;
+      }
+  
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+  });
 //PUT /api/users/1
 router.put('/:id', (req, res) => {
 
