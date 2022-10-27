@@ -1,10 +1,10 @@
 const router = require('express').Router();
-
+//home page!
 router.get('/', (req, res) => {
     res.render('homepage');
     console.log(req.session);
 });
-
+//login if not loged in redirect
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/dashboard');
@@ -13,7 +13,7 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
-
+//sign up session authentication
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/dashboard');
@@ -22,12 +22,20 @@ router.get('/signup', (req, res) => {
 
     res.render('signup');
 });
-
+//redirect if tried to access without loggin in
 router.get('/addsauce', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/signup');
+        res.status(401);
+    }
     res.render('addsauce');
 });
-
+//same here
 router.get('/dashboard', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/signup');
+        res.status(401);
+    }
     res.render('dashboard');
 });
 
