@@ -25,7 +25,7 @@ router.get('/signup', (req, res) => {
 //redirect if tried to access without loggin in
 router.get('/addsauce', (req, res) => {
     if (!req.session.loggedIn) {
-        res.redirect('/signup');
+        res.redirect('/login');
         res.status(401);
     }
     res.render('addsauce');
@@ -33,7 +33,7 @@ router.get('/addsauce', (req, res) => {
 //same here
 router.get('/dashboard', (req, res) => {
     if (!req.session.loggedIn) {
-        res.redirect('/signup');
+        res.redirect('/login');
         res.status(401);
     }
     res.render('dashboard');
