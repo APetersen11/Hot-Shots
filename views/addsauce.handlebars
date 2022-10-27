@@ -56,6 +56,34 @@
           </select>
         </div>
       </div>
+          <div class="content bg-red-700 text-warning">
+        <div class="form-group p-2 bg-red-700 text-warning u-center">
+          <label class="u-text-ellipsis">
+            Would you like to upload a photo of the hot sauce?
+          </label>
+          {{!-- cloudinary upload widget --}}
+          {{!-- <button id="imageUpload">Upload Files</button> --}}
+         <button id="upload_widget" class="cloudinary-button">Upload Image</button>
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+
+<script type="text/javascript">  
+
+    var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'dwjycofwm',
+        upload_preset: 'hs_test',
+        }, (error, result) => { if (result.event == "success") {
+            console.log(result.info) // result.info contains data from upload
+        } })
+
+        document.getElementById("upload_widget").addEventListener("click", function(){
+            myWidget.open();
+        }, false);
+
+</script>  
+
+        </div>
+      </div>
       <div class="u-center bg-red-700 text-warning p-4">
         <button class="btn-link outline bg-black text-warning">Submit</button>
       </div>
