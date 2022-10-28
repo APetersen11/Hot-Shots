@@ -1,3 +1,8 @@
+require("dotenv").config();
+const cloudinary = require("cloudinary").v2;
+console.log(cloudinary.config().cloud_name);
+
+// add functionality to widget
 const addSauce = document.querySelector('#submit').value.trim();
 
 async function submitNewSauce(event) {
