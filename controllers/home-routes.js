@@ -15,10 +15,10 @@ router.get('/login', (req, res) => {
 });
 //sign up session authentication
 router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/dashboard');
-        return;
-    }
+    // if (req.session.loggedIn) {
+    //     res.redirect('/dashboard');
+    //     return;
+    // }
 
     res.render('signup');
 });
@@ -32,10 +32,10 @@ router.get('/addsauce', (req, res) => {
 });
 //same here
 router.get('/dashboard', (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-        res.status(401);
-    }
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/login');
+    //     res.status(401);
+    // }
     res.render('dashboard');
 });
 
