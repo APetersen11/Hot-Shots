@@ -24,10 +24,10 @@ router.get('/signup', (req, res) => {
 });
 //redirect if tried to access without loggin in
 router.get('/addsauce', (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-        res.status(401);
-    }
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/login');
+    //     res.status(401);
+    // }
     res.render('addsauce');
 });
 //same here
