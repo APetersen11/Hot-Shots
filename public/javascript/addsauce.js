@@ -3,29 +3,32 @@ const cloudinary = require("cloudinary").v2;
 console.log(cloudinary.config().cloud_name);
 
 // add functionality to widget
-const addSauce = document.querySelector('#submit').value.trim();
-
-async function submitNewSauce(event) {
+async function addSauceFormHandler(event) {
     event.preventDefault();
 
-    const sauceName = document.querySelector('input[name="add-new-sauce"]').value;
-    const sauceDescription = document.querySelector('input[name="new-sauce-description"]').value;
+    //const newSauce = document.querySelector('#new-sauce').value.trim();
+    const sauceDescription = document.querySelector('#new-sauce-description').value.trim();
+    const location = document.querySelector('#location').value.trim();
+    const heatLevel = document.querySelector('#heat-level').value.trim();
 
-    const response = await fetch(`/api/posts`, {
-        method: 'POST',
-        body: JSON.stringify({
-            sauceName,
-            sauceDescription
-        }),
-        headers: {
-            'Content-Type': 'application/json'
+
+    if (sauceDescription && location && heatLevel) {
+        const response = await fetch('/api/post/addsauce', {
+            method: 'post',
+            body: JSON.stringify({
+                //name,
+                description,
+                location,
+                sco_score
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (response.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert('Fill out all required feilds!');
         }
-    });
-
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert(response.statusText);
     }
 };
 
