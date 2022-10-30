@@ -67,7 +67,7 @@ router.delete('/:id', (req, res) => {
         });
 });
 
-router.post('/addsauce', (req, res) => {
+router.post('/newsauce', (req, res) => {
     User.findOne({
         where: {
             id: req.body.id,
