@@ -27,13 +27,13 @@ async function addSauceFormHandler(event) {
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert('Fill out all required feilds!');
+            alert('Fill out all required fields!');
         }
     }
 };
 
 // add sauce button
-addSauce.addEventListener('click', () => {
+addSauce.addEventListener('submit', () => {
     console.log('clicking')
     document.location.replace('/dashboard/');
 });
