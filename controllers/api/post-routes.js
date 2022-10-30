@@ -67,4 +67,27 @@ router.delete('/:id', (req, res) => {
         });
 });
 
+router.post('/addsauce', (req, res) => {
+    User.findOne({
+        where: {
+            id: req.body.id,
+            name: req.body.name,
+            description: req.body.description,
+            location: req.body.location,
+            sco_score: req.body.sco_score
+        }
+    })
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'This post does not exist 🙈!'});
+            return;
+        }
+        res.json(dbPostData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
 module.exports = router;
