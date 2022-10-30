@@ -55,14 +55,14 @@ document.getElementById("app").innerHTML = (
   document.getElementById("upload_widget").addEventListener(
     "click",
     function () {
-      myWidget.open();
+      myWidget.open();    
     },
     false
   );
 
-// addSauce.addEventListener('click', () => {
-//     console.log('clicking')
-//     document.location.replace('/dashboard/');
-// });
+addSauce.addEventListener('click', () => {
+    console.log('clicking')
+    document.location.replace('/dashboard/');
+});
 
 document.querySelector('.added-sauces').addEventListener('submit', submitNewSauce);
