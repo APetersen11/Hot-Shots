@@ -1,5 +1,5 @@
 // const { Model, DataTypes } = require('sequelize');
-// // const sequelize = require('../config/connection');
+// const sequelize = require('../config/connection');
 
 // class Sauce extends Model { }
 
@@ -15,22 +15,28 @@
 //             type: DataTypes.STRING,
 //             allowNull: false,
 //         },
-//         description : {
+//         description: {
 //             type: DataTypes.STRING,
 //             allowNull: false,
-//             validate:{
+//             validate: {
 //                 len: [1]
 //             }
 //         },
 //         location: {
 //             type: DataTypes.STRING,
-//             allowNull:false
+//             allowNull: false
 //         },
 //         sco_score: {
 //             type: DataTypes.INTEGER,
 //             allowNull: false
 //         },
+//     },
+//     {
+//         sequelize,
+//         freezeTableName: true,
+//         underscored: true,
+//         modelName: 'post'
 //     }
 // )
 
-// module.exports = Sauce;
+// // module.exports = Sauce;
