@@ -6,17 +6,17 @@ console.log(cloudinary.config().cloud_name);
 async function addSauceFormHandler(event) {
     event.preventDefault();
 
-    //const newSauce = document.querySelector('#new-sauce').value.trim();
-    const sauceDescription = document.querySelector('#new-sauce-description').value.trim();
+    const name = document.querySelector('sauce_name').value.trim();
+    const description = document.querySelector('#new-sauce-description').value.trim();
     const location = document.querySelector('#location').value.trim();
-    const heatLevel = document.querySelector('#heat-level').value.trim();
+    const sco_score = document.querySelector('#heat-level').value.trim();
 
 
-    if (sauceDescription && location && heatLevel) {
+    if (name && description && location && sco_score) {
         const response = await fetch('/api/post/addsauce', {
             method: 'post',
             body: JSON.stringify({
-                //name,
+                name,
                 description,
                 location,
                 sco_score

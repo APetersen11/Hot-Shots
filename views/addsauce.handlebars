@@ -14,18 +14,20 @@
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- name --}}
           <p class="u-text-ellipsis">What is the name of the sauce?</p>
           <input
             type="sauce-name"
             class="form-group-input"
             placeholder="Sauce Name"
             name="add-new-sauce"
-            id="new-sauce"
+            id="sauce_name"
           />
         </div>
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- description --}}
           <p class="u-text-ellipsis">Please describe the sauce.</p>
           <textarea
             type="description"
@@ -38,6 +40,7 @@
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- location --}}
           <p class="u-text-ellipsis">Where did you find it?</p>
           <input
             type="string"
@@ -50,6 +53,7 @@
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- heat level --}}
           <label class="u-text-ellipsis">
             What is the approx heat level of the sauce?
           </label>
@@ -88,7 +92,7 @@
         </div>
       </div>
       <div class="u-center bg-red-700 text-warning p-4">
-        <a href="/dashboard"><button class="btn-link outline bg-black text-warning" id="submit">Submit</button></a>
+        <a href="/dashboard"><button type="submit" class="btn-link outline bg-black text-warning" id="submit">Submit</button></a>
       </div>
     </form>
   </body>

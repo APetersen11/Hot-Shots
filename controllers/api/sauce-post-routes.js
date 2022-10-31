@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Router } = require('express');
-const { User, Post, Sauce } = require('../../models');
+const { User, Sauce } = require('../../models');
 
 //get /api/posts
 router.get('/', (req, res) => {
@@ -70,7 +70,6 @@ router.delete('/:id', (req, res) => {
 router.post('/addsauce', (req, res) => {
     User.findOne({
         where: {
-            id: req.body.id,
             name: req.body.name,
             description: req.body.description,
             location: req.body.location,
@@ -90,4 +89,4 @@ router.post('/addsauce', (req, res) => {
     })
 });
 
-module.exports = router;
+ module.exports = router;
