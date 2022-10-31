@@ -6,7 +6,7 @@ const userRoutes = require('./user-routes');
 const saucePostRoutes = require('./sauce-post-routes');
 
 router.use('/users', userRoutes);
-router.use('/sauce_post', saucePostRoutes);
+router.use('/addsauce', saucePostRoutes);
 
 
 module.exports = router;
