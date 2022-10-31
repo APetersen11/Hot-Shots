@@ -22,7 +22,7 @@ Hot sauce (name, description, location, sco_score)
     ('Melindas Black Truffle Hot Sauce', 'Has a nice flavor twist, using Parmesan, garlic, and honey to deliver some depth to the flavor beyond those delicious truffles.', 'Irving, TX', 'Mild')
     ('Queen Majesty Scotch Bonnet & Ginger Hot Sauce', 'The fruity sweetness of the pepper pairs well with ginger. Unique exotic flavor and label.', 'Queens, NY', 'Mild')
 
-Users (first_name, user_name, email, password)
+Users (name, user_name, email, password)
     (Alyssa, AlyssaHotShot, pepper1@hotshot.com, '1234')
     (Hector, HectorHotShot, pepper2@hotshot.com, '1234')
     (Josh, JoshHotShot, pepper3@hotshot.com, '1234')

@@ -12,7 +12,7 @@ async function addSauceFormHandler(event) {
 
   if (name && description && location && sco_score) {
     const response = await fetch("/api/addsauce", {
-      method: "post",
+      method: "POST",
       body: JSON.stringify({
         name,
         description,
