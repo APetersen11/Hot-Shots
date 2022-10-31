@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const { Router } = require('express');
 const { User, Sauce } = require('../../models');
 
-//get /api/posts
+//get /api/sauce_post
 router.get('/', (req, res) => {
-    Post.findAll({})
-    .then(dbPostData => res.json(dbPostData))
-    .cath(err => {
+    Sauce.findAll({})
+    .then(dbsauceData => res.json(dbsauceData))
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
@@ -14,7 +13,7 @@ router.get('/', (req, res) => {
 
 //get specific Post
 router.get('/:id', (req, res) => {
-    Post.findOne({
+    Sauce.findOne({
         where: {
             id : req.params.id
         }
@@ -34,22 +33,24 @@ router.get('/:id', (req, res) => {
 //Post to post lol
 router.post('/', (req, res) => {
 
-    Post.create({
-        //these were defined in the Post model
-        user_id: req.body.user_id,
-        title: req.body.title,
-        body: req.body.body
-    })
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
+   Sauce.create({
+    name: req.body.name,
+    description: req.body.description,
+    location: req.body.location,
+    sco_score: req.body.sco_score,
+    user_id: req.session.id
+   })
+   .then(saucePost => res.json(saucePost))
+   .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+   })
+
 });
 
 //DELETE posts
 router.delete('/:id', (req, res) => {
-    Post.destroy({
+    Sauce.destroy({
         where: {
             id: req.params.id
         }
@@ -66,27 +67,27 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
-router.post('/addsauce', (req, res) => {
-    User.findOne({
-        where: {
-            name: req.body.name,
-            description: req.body.description,
-            location: req.body.location,
-            sco_score: req.body.sco_score
-        }
-    })
-    .then(dbPostData => {
-        if (!dbPostData) {
-            res.status(404).json({ message: 'This post does not exist 🙈!'});
-            return;
-        }
-        res.json(dbPostData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
-});
+//not tooo sure what this is supposed to do but looks promising...
+// router.post('/addsauce', (req, res) => {
+//     User.findOne({
+//         where: {
+//             name: req.body.name,
+//             description: req.body.description,
+//             location: req.body.location,
+//             sco_score: req.body.sco_score
+//         }
+//     })
+//     .then(dbPostData => {
+//         if (!dbPostData) {
+//             res.status(404).json({ message: 'This post does not exist 🙈!'});
+//             return;
+//         }
+//         res.json(dbPostData);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     })
+// });
 
  module.exports = router;

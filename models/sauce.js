@@ -11,16 +11,20 @@ Sauce.init(
             primaryKey: true,
             autoIncrement: true
         },
-        title: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
           },
-        body: {
+        description: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len : [1]
             }
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
