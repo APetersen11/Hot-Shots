@@ -1,33 +1,45 @@
 {{!-- add pepper image --}}
-<div>
-  <img class="px-3 py-12 u-flex" src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,h_525/v1666744995/test/killerredbg_esvfhv.png">
-</div>
+{{!-- <div>
+  <img style="height:525px;" src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,h_525/v1666744995/test/killerredbg_esvfhv.png">
+</div> --}}
+
+
+
 <!-- add sauce form start -->
 <html>
   <body>
-<div class = "u-flex-inline">
+{{!-- <div class = "u-flex-inline">
   <img class="px-3 py-12" src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,h_450/v1666744995/test/killerredbg_esvfhv.png">
-</div>
+</div> --}}
+<img class= "pepper-image" src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,h_525/v1666744995/test/killerredbg_esvfhv.png">
+<style>
+  .pepper-image{
+    height: 85%;
+    padding-top: 8.5%;
+  }
+</style>
     <form
-      class="card u-center-alt u-absolute bg-red-700 text-warning u-overflow-auto"
+      class="card u-center-alt u-absolute bg-red-700 text-warning u-overflow-auto addsauce-form"
       style="width: 800px; height: 450px">
       <div class="card__header u-center bg-red-700 text-warning">
         <p class="font-bold px-3">Add a new sauce!</p>
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- name --}}
           <p class="u-text-ellipsis">What is the name of the sauce?</p>
           <input
             type="sauce-name"
             class="form-group-input"
             placeholder="Sauce Name"
             name="add-new-sauce"
-            id="new-sauce"
+            id="sauce_name"
           />
         </div>
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- description --}}
           <p class="u-text-ellipsis">Please describe the sauce.</p>
           <textarea
             type="description"
@@ -40,9 +52,10 @@
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- location --}}
           <p class="u-text-ellipsis">Where did you find it?</p>
           <input
-            type="string"
+            type="search"
             class="form-group-input"
             placeholder="Location"
             name="location"
@@ -52,6 +65,7 @@
       </div>
       <div class="content bg-red-700 text-warning">
         <div class="form-group p-2 bg-red-700 text-warning u-center">
+          {{!-- heat level --}}
           <label class="u-text-ellipsis">
             What is the approx heat level of the sauce?
           </label>
@@ -70,9 +84,17 @@
             Would you like to upload a photo of the hot sauce?
           </label><br>
           {{!-- cloudinary upload widget cloudinary-button--}}
-         <button id="upload_widget" class="btn-link outline bg-warning text-red-700">Upload Image</button>
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+              <button id="upload_widget" class="cloudinary-button btn-link outline bg-black text-warning">Upload files</button>
 
+
+        </div>
+      </div>
+      <div class="u-center bg-red-700 text-warning p-4">
+        <button type="submit" class="btn-link outline bg-black text-warning">Submit</button>
+      </div>
+    </form>
+<script src="../public/javascript/addsauce.js" type="text/javascript"></script> 
+{{!-- <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>   --}}
 <script type="text/javascript">  
 
     var myWidget = cloudinary.createUploadWidget({
@@ -86,12 +108,5 @@
             myWidget.open();
         }, false);
 </script>  
-
-        </div>
-      </div>
-      <div class="u-center bg-red-700 text-warning p-4">
-        <a href="/dashboard"><button class="btn-link outline bg-black text-warning" id="submit">Submit</button></a>
-      </div>
-    </form>
   </body>
 </html>
