@@ -36,14 +36,14 @@ router.post("/", (req, res) => {
     name: req.body.name,
     description: req.body.description,
     location: req.body.location,
-    sco_score: req.body.sco_score,
-    user_id: req.session.id,
-  }).then((saucePost) => res.json(saucePost));
-  if (!saucePost) {
-    res.status(404).json({ message: "this post does not exist 🙈!" });
-  }
-  res
-    .json(saucePost)
+    sco_score: req.body.sco_score
+  })
+    .then((saucePost) => {
+      if (!saucePost) {
+        res.status(404).json({ message: "this post does not exist 🙈!" });
+      }
+      res.json(saucePost);
+    })
 
     .catch((err) => {
       console.log(err);
