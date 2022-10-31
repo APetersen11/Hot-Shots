@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
 
 //POST /api/users
 router.post('/', (req, res) => {
-
+console.log("ROUTE HIT==========")
     User.create({
         //these were defined in the User model
         username: req.body.username,
