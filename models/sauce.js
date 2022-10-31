@@ -13,29 +13,32 @@ Sauce.init(
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
+            allowNull: false
+          },
         description: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1]
+                len : [1]
             }
         },
         location: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
-        sco_score: {
+        user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
-        },
+            references: {
+              model: 'user',
+              key: 'id'
+            }
+        }
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
+        modelName: 'sauce'
     }
 )
 
