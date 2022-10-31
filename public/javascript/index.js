@@ -1,4 +1,4 @@
-const accept = document.querySeclector('#accept').value.trim();
+const accept = document.querySelector('#accept').value.trim();
 
 async function acceptWarning(event) {
     event.preventDefault();
