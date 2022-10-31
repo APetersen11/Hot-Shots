@@ -5,6 +5,4 @@ const Sauce = require('./sauce');
 module.exports = { User, Sauce };
 
 
-
-
 // create associations
