@@ -1,14 +1,14 @@
-const logout = document.querySelector('#logout').value.trim();
-
-async function logOutButton(event) {
-    event.preventDefault();
-};
-
-// function preventBack() { window.history.forward(); }
-// setTimeout("preventBack()", 0);
-// window.onunload = function(){null};
-
-logout.addEventListener('click', () => {
-    console.log('clicking')
-    document.location.replace('/login/');
-});
+async function logout() {
+    const response = await fetch('/api/users/logout', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' }
+    });
+  
+    if (response.ok) {
+      document.location.replace('/login');
+    } else {
+      alert(response.statusText);
+    }
+  }
+  
+  document.querySelector('#logout').addEventListener('click', logout);
