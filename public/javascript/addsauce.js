@@ -33,9 +33,9 @@ async function addSauceFormHandler(event) {
 };
 
 // add sauce button
-addSauce.addEventListener('click', () => {
-    console.log('clicking')
+addSauce.addEventListener('submit', () => {
+    addSauceFormHandler();
     document.location.replace('/dashboard/');
 });
 
-document.querySelector('.added-sauces').addEventListener('submit', submitNewSauce);
+document.querySelector('#added-sauces').addEventListener('submit', addSauceFormHandler);
