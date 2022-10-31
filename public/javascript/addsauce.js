@@ -1,6 +1,3 @@
-const cloudinary = require("cloudinary").v2;
-
-// add functionality to widget
 async function addSauceFormHandler(event) {
   event.preventDefault();
 
@@ -23,11 +20,9 @@ async function addSauceFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard')
-            return alert("Your sauce has been submitted!");
-            ;
+            document.location.replace('/dashboard');
         } else {
-            windows.alert('Fill out all required fields!');
+            alert('Fill out all required fields!');
         }
     }
 };
