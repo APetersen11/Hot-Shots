@@ -11,7 +11,7 @@ async function addSauceFormHandler(event) {
 
 
     if (name && description && location && sco_score) {
-        const response = await fetch('/api/sauce_post', {
+        const response = await fetch('/api/sauce-post-routes', {
             method: 'post',
             body: JSON.stringify({
                 name,
@@ -23,44 +23,13 @@ async function addSauceFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/dashboard')
+            return alert("Your sauce has been submitted!");
+            ;
         } else {
-            windows.alert('Fill out all required feilds!');
+            windows.alert('Fill out all required fields!');
         }
     }
 };
-
-// document.getElementById("app").innerHTML = (
-//     <div>
-//       <button id="upload_widget" class="cloudinary-button">
-//         Upload Image
-//       </button>
-//     </div>
-//   );
-  
-//   var myWidget = cloudinary.createUploadWidget(
-//     {
-//       cloudName: "dwjycofwm",
-//       uploadPreset: "hs_test",
-//     },
-//     (error, result) => {
-//       if (!error && result && result.event === "success") {
-//         console.log("Done! Here is the image info: ", result.info);
-//       }
-//     }
-//   );
-  
-//   document.getElementById("upload_widget").addEventListener(
-//     "click",
-//     function () {
-//       myWidget.open();
-//     },
-//     false
-//   );
-
-// addSauce.addEventListener('click', () => {
-//     console.log('clicking')
-//     document.location.replace('/dashboard/');
-// });
 
 document.querySelector('.addsauce-form').addEventListener('submit', addSauceFormHandler);
