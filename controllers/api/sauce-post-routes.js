@@ -1,9 +1,25 @@
 const router = require("express").Router();
 const { User, Sauce } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //get /api/sauce_post
 router.get("/", (req, res) => {
-  Sauce.findAll({})
+  Sauce.findAll({
+    attributes: [
+      'id',
+      'name',
+      'description',
+      'location',
+      'sco_score',
+      'created_at'
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
     .then((dbsauceData) => res.json(dbsauceData))
     .catch((err) => {
       console.log(err);
@@ -31,12 +47,13 @@ router.get("/:id", (req, res) => {
 });
 
 //Post to post
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Sauce.create({
     name: req.body.name,
     description: req.body.description,
     location: req.body.location,
-    sco_score: req.body.sco_score
+    sco_score: req.body.sco_score,
+    user_id: req.session.user_id  
   })
     .then((saucePost) => {
       if (!saucePost) {

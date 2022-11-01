@@ -1,14 +1,12 @@
-console.log("yo, I am working");
-
 async function addSauceFormHandler(event) {
   event.preventDefault();
 
-  const name = document.querySelector("#sauce_name").value.trim();
+  const name = document.querySelector("#sauce_name").value;
   const description = document
     .querySelector("#new-sauce-description")
-    .value.trim();
-  const location = document.querySelector("#location").value.trim();
-  const sco_score = document.querySelector("#heat-level").value.trim();
+    .value;
+  const location = document.querySelector("#location").value;
+  const sco_score = document.querySelector("#heat-level").value;
 
   if (name && description && location && sco_score) {
     const response = await fetch("/api/addsauce", {

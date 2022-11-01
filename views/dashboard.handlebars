@@ -1,26 +1,31 @@
 <!-- hero section -->
 <html>
-    <body>
-        {{> nav-bar-dash}}
+
+<body>
+    {{> nav-bar-dash}}
     <div class="hero fullscreen u-relative px-2">
         <div class="hero-body">
 
             <!-- card section 1 -->
             <div class="u-absolute u-right-0">
                 <div class="card content bg-red-700" style="width: 350px;">
-                     <h5 class="title u-text-center">Hot Shots Recommend</h5>
+                    <h5 class="title u-text-center">Hot Shots Recommend</h5>
                     <div class="content row bg-red-700">
                         <content>
                             <div class="u-flex">
-                                <img src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,w_150/v1666886493/jsiv8hmtn0dlvdifyzce.png">
-                                <p class="flex u-text-center"><strong>Hot Shots Hot Sauce</strong> Reviewers say, "if you put this on shoe leather and it would make it taste like filet mignon!"</p>
+                                <img
+                                    src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,w_150/v1666886493/jsiv8hmtn0dlvdifyzce.png">
+                                <p class="flex u-text-center"><strong>Hot Shots Hot Sauce</strong> Reviewers say, "if
+                                    you put this on shoe leather and it would make it taste like filet mignon!"</p>
                             </div>
                             <div class="u-flex">
-                                <img src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,e_bgremoval,w_150/v1667058598/CatInHeat_Lead-1_960x_hodmis.webp">
+                                <img
+                                    src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,e_bgremoval,w_150/v1667058598/CatInHeat_Lead-1_960x_hodmis.webp">
                                 <div>
-                                <p class="u-text-center"><strong>Fat Cat: Cat in Heat</strong></p>
-                                <p class="u-text-center">The only thing to dislike with this sauce is it goes fast when you let your friends know you have it. "</p>
-                            </div>
+                                    <p class="u-text-center"><strong>Fat Cat: Cat in Heat</strong></p>
+                                    <p class="u-text-center">The only thing to dislike with this sauce is it goes fast
+                                        when you let your friends know you have it. "</p>
+                                </div>
                             </div>
                         </content>
                     </div>
@@ -29,37 +34,19 @@
             <!-- Row section won't flex-->
             <section>
                 <div class="u-absolute u-center-alt">
+                    {{#each sauce}}
                     <div class="card content bg-warning u-overflow-auto" style="width: 675px; height: 150px;">
                         <div class="card__container row bg-warning">
                             <div class="u-text-center">
-                                <h5 class="title">Elijahs Xtreme Regret Hot Sauce'</h5>
-                                <p><strong>Description:</strong> Delicious combination of extreme heat and fruity sweetness. There’s more depth here than many super-hot sauces and very little dilution keeping you from the Carolina Reaper and scorpion pepper’s super-spiciness and natural sweetness.</p>
-                                <p><strong>Location:</strong> Lowell, NC</p>
-                                <p><strong>Scoville Score:</strong> Killer</p>
+                                <h5 class="title">{{name}}</h5>
+                                <p><strong>Description:</strong> {{description}}
+                                </p>
+                                <p><strong>Location:</strong> {{location}}</p>
+                                <p><strong>Scoville Score:</strong>{{sco_score}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="card content bg-warning u-overflow-auto" style="width: 675px; height: 150px;">
-                        <div class="card__container row bg-warning">
-                            <div class="u-text-center">
-                                <h5 class="title">Aka Miso Ghost-Reaper Hot Sauce</h5>
-                                <p><strong>Description:</strong> Few hot sauces nail the flavor and heat combo as well as Aka Miso Ghost-Reaper. It’s an “umami bomb” — full of bold flavors and a heat that stacks up well against it.</p>
-                                <p><strong>Location:</strong> Huston,TX</p>
-                                <p><strong>Scoville Score:</strong> Extreme</p>      
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card content bg-warning u-overflow-auto" style="width: 675px; height: 150px;">
-                        
-                        <div class="card__container row bg-warning">
-                             <div class="u-text-center">
-                                <h5 class="title">Da Bomb Beyond Insanity Hot Sauce</h5>
-                                <p><strong>Description:</strong> Very collectible packaging meets big heat that tends to linger. Careful - too much will overtake your meal. Smoky and sweet - but use a drop or two at a time.</p>
-                                <p><strong>Location:</strong> Kansas City, KS</p>
-                                <p><strong>Scoville Score:</strong> Extreme</p>      
-                            </div>
-                        </div>
-                    </div>
+                    {{/each}}
                 </div>
             </section>
             <div class="hero-body">
@@ -72,14 +59,22 @@
                                 <h5 class="title">This Week's Featured Post</h5>
                                 <content>
                                     <div>
-                                        <img class="u-center"src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,h_200/v1667091313/8f7e3305-75cb-4c0d-a0cf-441742135f17-1-201-a_orig-removebg-preview_z1vutw.png">
+                                        <img class="u-center"
+                                            src="https://res.cloudinary.com/dwjycofwm/image/upload/c_scale,h_200/v1667091313/8f7e3305-75cb-4c0d-a0cf-441742135f17-1-201-a_orig-removebg-preview_z1vutw.png">
                                     </div>
                                     <div>
-                                        <p class="u-text-center"><strong>Hot Sauce Name:</strong> Little Dick's Big Flavor</p>
-                                         <p class="u-text-center"><strong>Submitted by Hot Shot:</strong> Pika336</p>
-                                          <p class="u-text-center"><strong>Location:</strong> NYC</p>
-                                          <p class="u-text-center"><strong>Spice Level:</strong> Hot</p>
-                                           <p class="u-text-center"><strong>Description:</strong> I have been searching for the perfect sauce to "get there" with, and I think I've found it. If you're like me, you want a hot sauce that compliments the flavor of the food while providing a somewhat masochistic experience of spice that ultimately culminates in a dopamine endorphins avalanche. If you're a hot-sauce junky and are looking for a sauce that can turn up to 11 and still sound good, this is the sauce for you.</p>
+                                        <p class="u-text-center"><strong>Hot Sauce Name:</strong> Little Dick's Big
+                                            Flavor</p>
+                                        <p class="u-text-center"><strong>Submitted by Hot Shot:</strong> Pika336</p>
+                                        <p class="u-text-center"><strong>Location:</strong> NYC</p>
+                                        <p class="u-text-center"><strong>Spice Level:</strong> Hot</p>
+                                        <p class="u-text-center"><strong>Description:</strong> I have been searching for
+                                            the perfect sauce to "get there" with, and I think I've found it. If you're
+                                            like me, you want a hot sauce that compliments the flavor of the food while
+                                            providing a somewhat masochistic experience of spice that ultimately
+                                            culminates in a dopamine endorphins avalanche. If you're a hot-sauce junky
+                                            and are looking for a sauce that can turn up to 11 and still sound good,
+                                            this is the sauce for you.</p>
                                     </div>
                                 </content>
                             </div>
@@ -92,4 +87,5 @@
     </div>
     <!-- End hero section -->
 </body>
+
 </html>
