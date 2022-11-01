@@ -4,7 +4,7 @@ router.get('/', (req, res) => {
     res.render('homepage');
     console.log(req.session);
 });
-//login if not loged in redirect
+//login if not logged in redirect
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/dashboard');

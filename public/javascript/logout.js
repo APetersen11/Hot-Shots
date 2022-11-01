@@ -5,9 +5,10 @@ async function logout() {
     });
   
     if (response.ok) {
-      document.location.replace('/login');
+      document.location.replace('/login') 
+      return alert("You have been logged out!");
     } else {
-      alert(response.statusText);
+      alert('You are logged out!');
     }
   }
   
